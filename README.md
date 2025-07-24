@@ -1,9 +1,14 @@
 # PrimeSieveOfKra
 Code and Documentation for the Prime Number Sieve of Kra, including comparison to other Prime Number Sieves.
 
+This prime number sieve algorithm is faster than the sieves of  Eratosthenes, Sundaram, Euler, Atkins, and Pritchard for large upper limits.
+
+As typically used, this algorithm, compared to these others, uses only 23% of the memory to hold candidate numbers.
+
 Code for other prime number sieves, and ModuloInverse adapted from public sources.
 
     Prime number sieve algorithm by David A. Kra 	
+    
     Parameters: 
        upToNumm     The top of the range within which to find all the prime numbers
        pnprimorial  The prime number in the range 3 to 13, whose primorial to use to define the number of columns in the sieve array.
@@ -20,7 +25,7 @@ Code for other prime number sieves, and ModuloInverse adapted from public source
 		#3 Mark only the multiples of sieving primes, meaning those primes which are less than the square root of the largest candidate. + #2
 		#4 Separately mark evens. Harvest only from odds, prefix 2 to the result list. +#3
 		#5 Separately mark the odd multiples of 3. While Sieving, sieve the 1 mod 6 and 5 mod 6 skipping the 3 mod 6
-		#6 Ignore evens. Don't mark them, +#5
+		#6 Ignore evens. Don't mark them, and don't harvest from them. +#5
 		#7 Odds only, don't allocate memory for evens.+#6
       New and additional improvements: 
        * Conceptually, arrange the data in a 2D array with the primorial number of columns. e.g. 7 Primorial, 7#, = 2*3*5*7 = 210 columns.
